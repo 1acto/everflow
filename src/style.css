@@ -1,0 +1,157 @@
+@import 'reveal.js/dist/reveal.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-title: "Google Sans", "Product Sans", system-ui, sans-serif;
+  --font-body: Roboto, system-ui, sans-serif;
+}
+
+/* Base Light Theme (google-io-light) */
+.theme-google-io-light {
+  --bg-color: #F8F9FA;
+  --text-main: #202124;
+  --text-muted: #5f6368;
+  --card-bg: #FFFFFF;
+  --card-border: #E0E0E0;
+  --accent-color: #1a73e8; /* Default Blue */
+}
+
+/* Base Dark Theme (google-io-dark) */
+.theme-google-io-dark {
+  --bg-color: #1F1F1F;
+  --text-main: #F8F9FA;
+  --text-muted: #C4C7C5;
+  --card-bg: #2D2D2D;
+  --card-border: #3C4043;
+  --accent-color: #8ab4f8; /* Soft blue */
+}
+
+/* Gemini Aura Theme (gemini-aura) */
+.theme-gemini-aura {
+  --bg-color: #F0F4F9;
+  --text-main: #1F1F1F;
+  --text-muted: #4A4A4A;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-border: rgba(227, 242, 253, 0.5);
+  --accent-color: #7A2FC2;
+  background-image: radial-gradient(at 0% 0%, hsla(253,16%,7%,0) 0, transparent 50%),
+                    radial-gradient(at 50% 0%, hsla(225,39%,30%,0.08) 0, transparent 50%),
+                    radial-gradient(at 100% 0%, hsla(339,49%,30%,0.05) 0, transparent 50%),
+                    radial-gradient(at 0% 100%, hsla(339,49%,30%,0.05) 0, transparent 50%),
+                    radial-gradient(at 100% 100%, hsla(256,40%,25%,0.06) 0, transparent 50%);
+}
+
+/* Accent Overrides */
+.accent-blue { --accent-color: #1a73e8; }
+.accent-red { --accent-color: #ea4335; }
+.accent-yellow { --accent-color: #fbbc05; }
+.accent-green { --accent-color: #34a853; }
+.accent-teal { --accent-color: #009688; }
+.accent-lavender { --accent-color: #ab47bc; }
+.accent-gemini { --accent-color: #7A2FC2; }
+
+/* Apply Theme */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  transition: background-color 0.5s ease, color 0.5s ease;
+  margin: 0;
+  padding: 0;
+}
+
+/* Google-style Heading Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-title);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Reveal.js Customizations for Google Style */
+.reveal {
+  font-family: var(--font-body);
+  color: var(--text-main);
+}
+
+.reveal .slides {
+  text-align: left;
+}
+
+.reveal section {
+  box-sizing: border-box;
+  padding: 40px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  height: 100%;
+}
+
+.reveal h1 {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.reveal h2 {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: var(--accent-color);
+  margin-bottom: 2rem;
+  letter-spacing: -0.01em;
+}
+
+.reveal h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.reveal p, .reveal li {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.reveal ul, .reveal ol {
+  margin-left: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.reveal li {
+  margin-bottom: 0.75rem;
+}
+
+/* Material Adaptive Card */
+.io-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.io-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  border-color: var(--accent-color);
+}
+
+/* Grid layout mapping for Reveal slides */
+.reveal .grid-2-cols {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  width: 100%;
+}
+
+/* Gemini Auroral Gradient Text */
+.text-gradient {
+  color: #1a73e8;
+}

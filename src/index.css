@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-sans: "IBM Plex Sans Thai", "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-display: "IBM Plex Sans Thai", "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+}
+
+:root {
+  --md-sys-color-primary: #1a73e8;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-surface: #f8f9fa;
+  --md-sys-color-surface-container: #ffffff;
+  --md-sys-color-surface-container-high: #f1f3f4;
+  --md-sys-color-outline: #dadce0;
+  --md-sys-color-outline-variant: #e0e0e0;
+  --md-sys-color-on-surface: #1f1f1f;
+  --md-sys-color-on-surface-variant: #5f6368;
+  
+  --elevation-1: 0px 1px 3px 1px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.30);
+  --elevation-2: 0px 2px 6px 2px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.30);
+  --elevation-3: 0px 1px 3px 0px rgba(0, 0, 0, 0.3), 0px 4px 8px 3px rgba(0, 0, 0, 0.15);
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #F8F9FA;
+  color: #1F1F1F;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+/* Custom scrollbar matching Google design */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* Extreme typographic contrast & style presets matching Google I/O Bold Typography theme */
+h1, h2, .font-display {
+  font-family: var(--font-display) !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.04em !important;
+}
+
+/* Custom soft rounded cards with borders matching Google I/O style */
+.io-card {
+  background: #FFFFFF;
+  border: 1px solid #DADCE0;
+  border-radius: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.io-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+  border-color: #BDBDBD;
+}
+
+/* Custom glow effects matching Google I/O and Gemini Aura styles */
+.gemini-glow-teal {
+  box-shadow: 0 0 40px rgba(0, 150, 136, 0.18);
+}
+
+.gemini-glow-blue {
+  box-shadow: 0 0 40px rgba(26, 115, 232, 0.18);
+}
+
+.gemini-glow-lavender {
+  box-shadow: 0 0 40px rgba(138, 75, 243, 0.18);
+}
+
+/* Animated gradient background */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-aurora {
+  background: linear-gradient(135deg, rgba(232, 240, 254, 0.7) 0%, rgba(228, 248, 246, 0.7) 33%, rgba(243, 229, 245, 0.7) 66%, rgba(248, 249, 250, 0.9) 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 20s ease infinite;
+}
+
+/* Beautiful custom color for text values */
+.google-gradient-text {
+  color: #1a73e8;
+}
+
+/* Moving Grid animation */
+@keyframes gridMove {
+  0% { background-position: 0px 0px; }
+  100% { background-position: 40px 40px; }
+}
+
+.animate-grid-move {
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, rgba(0,0,0,0.02) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(0,0,0,0.02) 1px, transparent 1px);
+  animation: gridMove 8s linear infinite;
+}
+
+/* Color Morphing animations */
+@keyframes colorMorph {
+  0% { border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%; }
+  50% { border-radius: 70% 30% 52% 48% / 60% 40% 60% 40%; }
+  100% { border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%; }
+}
+
+.shape-morph-1 {
+  animation: colorMorph 12s ease-in-out infinite alternate;
+}
+
+.shape-morph-2 {
+  animation: colorMorph 16s ease-in-out infinite alternate-reverse;
+}
